@@ -10,7 +10,8 @@
 ${msg}
 <h1>Add product</h1>
 <c:url var="addAction" value="product/add"></c:url>
-<form:form action="${addAction}" commandName="product">
+<form:form action="${addAction}" commandName="product"
+  enctype="multipart/form-data" method="POST">
 <table>
 	<tr>
 			<td><form:label path="prt_id"> <spring:message text="ID"/></form:label></td>
@@ -43,7 +44,7 @@ ${msg}
 					<td><form:input type="file"
 							class=" btn btn-default btn-block form-control" path="image"
 							required="true" /></td>
-				</tr> 				
+				</tr>		
 	       <tr>
 	  <td><form:label path="supplier"><spring:message text="Supplier"/></form:label></td>
 	  
@@ -89,7 +90,7 @@ ${msg}
 		<th >Product Name</th>
 		<th >Product Description</th>
 				<th>Product Price</th>
-				<th>image</th>
+				<th>Product image</th>
 					<th>Category</th>
 						<th>Supplier</th>
 		<th>Edit</th>
@@ -103,9 +104,9 @@ ${msg}
 			<td>${product.prt_price}</td>
 			<td>${product.catey_id}<td>
 			<td>${product.suppr_id} </td>
-			<img height="100px" width="100px" alt="${product.prt_id }"
-									src="<c:url value="/resources/images/${product.prt_id }.jpg"></c:url>">
-							</div>
+			<td>
+			<img width="150px" height="150px"  alt="${product.prt_id}"
+            src="<c:url value="D:\\workspace\\ShoppingCartFrontEnd\\src\\main\\resources\\images\\${product.prt_id}.jpg"></c:url>"></td>
 			<td><a href="<c:url value="product/edit/${product.prt_id}"/>" >Edit</a></td>
 			<td><a href="<c:url value="product/remove/${product.prt_id}"/>" >Delete</a></td>
 		</tr>

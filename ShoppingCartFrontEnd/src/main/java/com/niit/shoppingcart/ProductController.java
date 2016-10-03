@@ -41,7 +41,7 @@ public class ProductController {
 	private CategoryDAO categoryDAO;
 	@Autowired(required=true)
 	private SupplierDAO supplierDAO;
-	//private String Path="D:\\ \\img";
+	private String path="D:\\workspace\\ShoppingCartFrontEnd\\src\\main\\resources\\images\\";
 	@RequestMapping(value="/product",method=RequestMethod.GET)
 	public String listProducts(Model model){
 		model.addAttribute("product", product);
@@ -54,20 +54,22 @@ public class ProductController {
 
 	}
 	@RequestMapping(value="product/add",method=RequestMethod.POST)
-	public String addProduct(@ModelAttribute("product") Product product,@RequestParam("image")MultipartFile file, String path){
-              Category category=categoryDAO.getByName(product.getCategory().getCaty_name());
+	public String addProduct(@ModelAttribute("product") Product product,@RequestParam("image") MultipartFile file){
+              /*Category category=categoryDAO.getByName(product.getCategory().getCaty_name());
+              categoryDAO.save(category);
                Supplier supplier=supplierDAO.getByName(product.getSupplier().getSupe_name());
+               supplierDAO.save(supplier);
                   product.setCategory(category);
                product.setSupplier(supplier);
              product.setCatey_id(category.getCaty_id());
-               product.setSuppr_id(supplier.getSupe_id());
+               product.setSuppr_id(supplier.getSupe_id());*/
               if (productDAO.get(product.getPrt_id()) == null) {
        			productDAO.save(product);
        		} else {
        			
        				productDAO.update(product);
        		}
-                 FileUtil.upload(path, file, product.getPrt_id()+".jpg");           
+                FileUtil.upload(path, file, product.getPrt_id()+".jpg");          
                   return "redirect:/manageProducts";
 	}
 	 	

@@ -7,6 +7,9 @@
 <title>AboutUs</title>
 </head>
 <body>
-<h1>This is Gadgets</h1>
+<h1>The Gadget Flow</h1>
+<p>The most powerful product discovery platform on the web, helping you discover, save and buy awesome products.
+
+</p>
 </body>
 </html>

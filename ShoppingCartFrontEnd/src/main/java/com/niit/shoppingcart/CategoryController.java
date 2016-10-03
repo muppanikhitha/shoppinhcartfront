@@ -29,7 +29,7 @@ public class CategoryController {
 	@Autowired
 	private CategoryDAO categoryDAO;
 	
-	//Logger instance
+
  Logger log=Logger.getLogger(CategoryController.class);
 
 	@RequestMapping(value = "/category", method = RequestMethod.GET)
@@ -73,7 +73,8 @@ public class CategoryController {
 	@RequestMapping("category/remove/{caty_id}")
 	public String  deleteCategory(@PathVariable("caty_id") String id)
 			throws Exception {
-		
+		System.out.println("i am in delete category");
+		System.out.println(id);
 	
 		Category category=categoryDAO.get(id);
 		ModelAndView mv = new ModelAndView("category");

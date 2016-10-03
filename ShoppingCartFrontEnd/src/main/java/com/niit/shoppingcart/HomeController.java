@@ -11,8 +11,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.niit.shoppingcart.dao.CategoryDAO;
+import com.niit.shoppingcart.dao.ProductDAO;
 import com.niit.shoppingcart.dao.UserDetailsDAO;
 import com.niit.shoppingcart.model.Category;
+import com.niit.shoppingcart.model.Product;
 import com.niit.shoppingcart.model.UserDetails;
 
 @Controller
@@ -20,7 +22,7 @@ public class HomeController {
 
 @RequestMapping("/home")
 public String homePage(Model model){
-	model.addAttribute("carousel"=="true");
+	model.addAttribute("carousel",true);
 	return "Home";
 }
 
@@ -33,6 +35,8 @@ public String homePage(Model model){
 	
 	@Autowired
 	UserDetails userDetails;
+	@Autowired
+ProductDAO productDAO;
 
 	@RequestMapping("/")
 	public ModelAndView home() {
@@ -78,6 +82,12 @@ public String homePage(Model model){
 	public String aboutPage(){
 		return "AboutUs";
 		
+	}
+	@RequestMapping(value="ProductList")
+	public String getSelectedProduct(Model model){
+		model.addAttribute("productList",this.productDAO.list());
+		model.addAttribute("isClickedProduct",true);
+		return "Home";
 	}
 
 }

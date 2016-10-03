@@ -60,7 +60,7 @@ public class SupplierController {
 
 	@RequestMapping("/supplier/remove/{supe_id}")
 	public String deletesupplier(@PathVariable("supe_id") String id) throws Exception {
-		System.out.println("i am in deletesupplier");
+		System.out.println("i am in delete supplier");
 		System.out.println(id);
 		Supplier supplier = supplierDAO.get(id);
 		ModelAndView mv = new ModelAndView();

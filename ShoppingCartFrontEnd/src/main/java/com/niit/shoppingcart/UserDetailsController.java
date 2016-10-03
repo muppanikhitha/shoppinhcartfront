@@ -87,6 +87,10 @@ public class UserDetailsController {
 				mv.addObject("isAdmin", "false");
 				mv.addObject("suceessmsg","success msg");
 				
+
+				session.setAttribute("product",product);
+				session.setAttribute("productList",productDAO.list());
+				
 			}
 		}else{
 			

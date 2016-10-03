@@ -13,7 +13,8 @@
 
 	<div>
 		<div data-role="header" data-position="fixed">
-			<h1><marquee>WELCOME TO GADGETS</marquee></h1>
+<h1 style="text-align:center;">WELCOME TO GADGETS FLOW</h1>
+
 			${SuccessMessage}
 			<table>
 				<tr>
@@ -75,7 +76,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Gadz</title>
+  <title>The Gadget Flow</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -92,16 +93,18 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Gadz</a>
+      <a class="navbar-brand" href="#">    <button type="button" class="btn btn-primary">
+      Gadgets</button></a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li class="active"><a href="home"><span class="glyphicon glyphicon-home"></span>Home</a></li>
+        <li><a href="ProductList">Products</a></li> 
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#"> <span class="glyphicon glyphicon-earphone"></span>Contacts <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">mobiles</a></li>
-            <li><a href="#">head phones</a></li>
+            <li><a href="#">ongole</a></li>
+            <li><a href="#">hyderabad</a></li>
           
           </ul>
         </li>
@@ -111,8 +114,10 @@
       <ul class="nav navbar-nav navbar-right">
         <c:choose>
 						<c:when test="${empty loggedInUser}">
-							<td ><a href="Login">Login</a></td>&nbsp;&nbsp;
-							<td><a href="Registration">Register></a></td>
+							<td ><a href="Login">    <button type="button" class="btn btn-primary">Login</button>
+							</a></td>&nbsp;&nbsp;
+							<td><a href="Registration">    <button type="button" class="btn btn-primary">Register</button>
+							</a></td>
 						</c:when>
 
 						<c:when test="${not empty loggedInUser}">
@@ -143,7 +148,11 @@
 			</c:if>
 		</div>
 
-
+       <div id="product">
+       <c:if test="${isClickedProduct==true}">
+       <jsp:include page="ProductList.jsp"></jsp:include>
+       </c:if>
+       </div> 
 		<div id="admin">
 			<c:if test="${isAdmin==true}">
 				<jsp:include page="adminHome.jsp"></jsp:include>
@@ -190,7 +199,7 @@
   </style>
 </head>
 <body>
-
+<c:if test="${carousel==true}">
 <div class="container">
   <br>
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -200,6 +209,7 @@
       <li data-target="#myCarousel" data-slide-to="1"></li>
       <li data-target="#myCarousel" data-slide-to="2"></li>
       <li data-target="#myCarousel" data-slide-to="3"></li>
+     
     </ol>
 
     <!-- Wrapper for slides -->
@@ -209,17 +219,18 @@
       </div>
 
       <div class="item">
-        <img src="C:\pics\second.jpg" alt="Chania" width="460" height="345">
+        <img src="C:\pics\eight.jpg" alt="Chania" width="460" height="345">
       </div>
     
       <div class="item">
-        <img src="C:\pics\third.jpg" alt="Flower" width="460" height="345">
+        <img src="C:\pics\nine.jpg" alt="Flower" width="460" height="345">
       </div>
 
       <div class="item">
-        <img src="C:\pics\fourth.jpg" alt="Flower" width="460" height="345">
+        <img src="C:\pics\ten.jpg" alt="Flower" width="460" height="345">
       </div>
     </div>
+    
 
     <!-- Left and right controls -->
     <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
@@ -232,14 +243,8 @@
     </a>
   </div>
 </div>
+</c:if>
 
-</body>
-</html>
-
-
-
-</body>
-</html>
 
 
 
