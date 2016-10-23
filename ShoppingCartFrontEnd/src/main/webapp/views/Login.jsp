@@ -18,18 +18,21 @@
 		<table>
 
 			<tr>
-				<td><form:label path="Id"><spring:message text="ID" /></form:label></td>
-				<td><form:input path="id" /></td>
-			</tr>
+                    <td>Id *</td>
+                    <td><input name="id" /></td>
+                </tr>
 			
 			<tr>
-			<td><form:label path="password"><spring:message text="PASSWORD" /></form:label></td>
-			<td><form:password path="password" /></td>
-		</tr>
-	</table>
-	<div >
-		<input type="submit"  value="Login" />
-		</div>
+                    <td>Password *</td>
+                    <td><input name="password" /></td>
+                </tr>
+	
+	 <tr>
+                    <td>&nbsp;</td>
+                    <td><input type="submit" value="Login" /> <input type="reset"
+                        value="Reset" /></td>
+                </tr>
+                </table>
 </form:form>
 </body>
 </html>

@@ -19,41 +19,46 @@
 ${RegisterMsg}
 	<form:form action="register"  method="post" commandName="userDetails" >
 					
-					
-						<form:label path="Id">
-								<spring:message text="ID"/>
-						</form:label>
-							<form:input path="id"  /><br>
-							
-								<form:label path="name">
-								 <spring:message text="name"/>
-								</form:label>
-							<form:input  path="name"   /><br>
-					
-						<form:label path="password">
-								 <spring:message text="password"/>
-								</form:label>
-							<form:password  path="password" /><br>
+					<table>
+						<tr>
+                <td>Id *</td>
+                <td><form:input path="id" /></td>
+                <td><form:errors path="id" class="error-message" /></td>
+            </tr>
+								<tr>
+                <td>Name *</td>
+                <td><form:input path="name" /></td>
+                <td><form:errors path="name" class="error-message" /></td>
+            </tr>
+					<tr>
+                <td>Password *</td>
+                <td><form:input path="password" /></td>
+                <td><form:errors path="password" class="error-message" /></td>
+            </tr>
 						
-						
-								<form:label path="mail">
-								 <spring:message text="mail"/>
-								</form:label>
-							<form:input  path="mail"   /><br>
+								<tr>
+                <td>Mail *</td>
+                <td><form:input path="mail" /></td>
+                <td><form:errors path="mail" class="error-message" /></td>
+            </tr>
 							
-							<form:label path="contact">
-								 <spring:message text="contact"/>
-								</form:label>
-							<form:input  path="contact"   /><br>
+							<tr>
+                <td>Contact*</td>
+                <td><form:input path="contact" /></td>
+                <td><form:errors path="contact" class="error-message" /></td>
+            </tr>
+						<tr>
+                <td>Address *</td>
+                <td><form:input path="address" /></td>
+                <td><form:errors path="address" class="error-message" /></td>
+            </tr>
 							
-							<form:label path="address">
-								 <spring:message text="address"/>
-								</form:label>
-							<form:input path="address"   /><br>
+                <td>&nbsp;</td>
+                <td><input type="submit" value="Submit" /> <input type="reset"
+                    value="Reset" /></td>
+            </tr>
 					
-						
-						<input type="submit"
-							value="Register"/>
+	</table>					
 </form:form>
 
 	

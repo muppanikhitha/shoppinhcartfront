@@ -9,7 +9,7 @@
 </style>
 
 </head>
-<body style="background-color:lightblue">
+<body style="background-color:skyblue">
 
 	<div>
 		<div data-role="header" data-position="fixed">
